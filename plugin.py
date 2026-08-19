@@ -7,9 +7,9 @@
 
 
 """
-<plugin key="PP-MANAGER" name="Python Plugin Manager" author="ycahome" version="1.5.49" externallink="https://www.domoticz.com/forum/viewtopic.php?f=65&t=22339">
+<plugin key="PP-MANAGER" name="Python Plugin Manager" author="ycahome" version="1.5.50" externallink="https://www.domoticz.com/forum/viewtopic.php?f=65&t=22339">
     <description>
-		<h2>Python Plugin Manager 1.5.48</h2><br/>
+		<h2>Python Plugin Manager 1.5.50</h2><br/>
 		<h3>Features</h3>
 		<ul style="list-style-type:square">
 			<li>Install plugins</li>
@@ -37,6 +37,7 @@
                 <option label="DDS238 ZN/S energy meter, single phase, Modbus RTU" value="domoticz-dds238"/>
                 <option label="DTS238 ZN/S energy meter, three phase, Modbus RTU" value="domoticz-dts238"/>
                 <option label="deCONZ bridge (For Conbee,Raspbee)" value="deCONZ"/>
+                <option label="Dell PowerEdge server via iDRAC Redfish" value="dell-idrac"/>
                 <option label="Denon/Marantz Amplifier" value="Denon4306"/>
                 <option label="Domoticz Theme Manager" value="domoticz-theme-manager"/>
                 <option label="Dyson Pure Link" value="DysonPureLink"/>
@@ -167,6 +168,7 @@ class BasePlugin:
             "ChromecastPlugin":             ["Tsjippy",         "ChromecastPlugin",                    	"Chromecast plugin for Domoticz",    "master"],
             "CreasolDomBus":                ["CreasolTech",     "CreasolDomBus",                    	"Creasol DomBus RS485 I/O/Sens modules", "master"],
             "deCONZ":                       ["Smanar",          "Domoticz-deCONZ",                      "deCONZ bridge (For Conbee,Raspbee)","master"],
+            "dell-idrac":                   ["Rouzax",          "dell-idrac-domoticz-plugin",           "Dell PowerEdge server via iDRAC Redfish: temperatures, fans, power, storage and health, plus opt-in power control", "dist"],
             "Denon4306":                    ["dnpwwo",    	"Domoticz-Denon-Plugin",                "Denon/Marantz Amplifier",           "master"],
             "domoticz-dds238":              ["CreasolTech",     "domoticz-dds238",                    	"DDS238 ZN/S energy meter, single phase, Modbus RTU", "master"],
             "domoticz-dts238":              ["CreasolTech",     "domoticz-dts238",                    	"DTS238 ZN/S energy meter, three phase, Modbus RTU", "master"],
