@@ -7,9 +7,9 @@
 
 
 """
-<plugin key="PP-MANAGER" name="Python Plugin Manager" author="ycahome" version="1.5.50" externallink="https://www.domoticz.com/forum/viewtopic.php?f=65&t=22339">
+<plugin key="PP-MANAGER" name="Python Plugin Manager" author="ycahome" version="1.5.51" externallink="https://www.domoticz.com/forum/viewtopic.php?f=65&t=22339">
     <description>
-		<h2>Python Plugin Manager 1.5.50</h2><br/>
+		<h2>Python Plugin Manager 1.5.51</h2><br/>
 		<h3>Features</h3>
 		<ul style="list-style-type:square">
 			<li>Install plugins</li>
@@ -63,6 +63,7 @@
                 <option label="IKEA Tradfri" value="IKEA-Tradfri"/>
                 <option label="Linky" value="Linky"/>
                 <option label="Link-Tap" value="Link-Tap"/>
+                <option label="Luxtronik heat pump controllers (Alpha Innotec)" value="luxtronikex"/>
                 <option label="Meteo Alarm EU RSS Reader" value="MeteoAlarmEU"/>
                 <option label="Mikrotik RouterOS" value="mikrotik-routeros"/>
                 <option label="MeshCore" value="Domoticz-MeshCore-Plugin"/>
