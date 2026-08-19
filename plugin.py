@@ -7,9 +7,9 @@
 
 
 """
-<plugin key="PP-MANAGER" name="Python Plugin Manager" author="ycahome" version="1.5.50" externallink="https://www.domoticz.com/forum/viewtopic.php?f=65&t=22339">
+<plugin key="PP-MANAGER" name="Python Plugin Manager" author="ycahome" version="1.5.51" externallink="https://www.domoticz.com/forum/viewtopic.php?f=65&t=22339">
     <description>
-		<h2>Python Plugin Manager 1.5.50</h2><br/>
+		<h2>Python Plugin Manager 1.5.51</h2><br/>
 		<h3>Features</h3>
 		<ul style="list-style-type:square">
 			<li>Install plugins</li>
@@ -68,6 +68,7 @@
                 <option label="MeshCore" value="Domoticz-MeshCore-Plugin"/>
                 <option label="Moon Phases" value="MoonPhases"/>
                 <option label="MQTT discovery" value="MQTTDiscovery"/>
+                <option label="myenergi zappi and harvi" value="myenergi"/>
                 <option label="Onkyo AV Receiver" value="Onkyo"/>
                 <option label="OpenWRT WiFi Presence MQTT translator" value="owrtwifi2domo"/>
                 <option label="Quatt" value="Quatt"/>
@@ -200,6 +201,7 @@ class BasePlugin:
             "MoonPhases":                   ["ycahome",         "MoonPhases",                           "Moon Phases",                       "master"],
             "Domoticz-MeshCore-Plugin":     ["galadril",        "Domoticz-MeshCore-Plugin",             "MeshCore",                          "main"],
             "MQTTDiscovery":                ["emontnemery",     "domoticz_mqtt_discovery",              "MQTT discovery",                    "master"],
+            "myenergi":                     ["Rouzax",          "myenergi-domoticz-plugin",             "myenergi zappi/harvi: solar, EV, home and grid energy with counters, plus opt-in control", "dist"],
             "Onkyo":                	    ["jorgh6",          "domoticz-onkyo-plugin",                "Onkyo AV Receiver",                 "master"],
             "owrtwifi2domo":                ["enesbcs",         "owrtwifi2domo",                        "OpenWRT WiFi Presence MQTT translator","master"],
             "pyrtl433":                     ["enesbcs",         "pyrtl433",                             "RTL_433 MQTT receiver",             "master"],
