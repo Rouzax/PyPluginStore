@@ -2959,7 +2959,7 @@
     },
     {
       "package_id": "HomeWizard-Wifi-p1-plugin-Extended",
-      "domoticz_key": "HOME_WIZARD_ELECTRIC_P1_METER",
+      "domoticz_key": "HOME_WIZARD_ELECTRIC_P1_METER_EXTENDED",
       "description": "Extended version of the original HomeWizard Wi-Fi P1 Domoticz plugin with more detailed data and multi-language support.",
       "repository": {
         "url": "https://github.com/szelessavalapitvany/HomeWizard-Wifi-p1-plugin-Extended",

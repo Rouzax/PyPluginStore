@@ -1312,7 +1312,7 @@
       "repository_identity": "github.com/eraser3/homewizard-wifi-p1-plugin"
     },
     {
-      "domoticz_key": "HOME_WIZARD_ELECTRIC_P1_METER",
+      "domoticz_key": "HOME_WIZARD_ELECTRIC_P1_METER_EXTENDED",
       "legacy_package_id": "HomeWizard-Wifi-p1-plugin-Extended",
       "package_id": "HomeWizard-Wifi-p1-plugin-Extended",
       "plugin_py_sha256": "64316d24bdd22c00de9237bad2bfa9fd61ea1bfcc4ebd1107bbef80449ccba83",
