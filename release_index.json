@@ -1,7 +1,7 @@
 {
-  "expires_at": "2026-10-20T10:24:56Z",
-  "generated_at": "2026-10-04T10:24:56Z",
-  "registry_sha256": "d956c334859faa3e6abc92b78db8da4ccddf56d139e435a4b9ec4fb511abeeef",
+  "expires_at": "2026-10-27T16:56:47Z",
+  "generated_at": "2026-10-11T16:56:47Z",
+  "registry_sha256": "8e02af650e470f6a747e9b60b0c4ed5f61a61b3f396694597f0f9f656215bebe",
   "releases": [
     {
       "artifact": {
@@ -253,27 +253,29 @@
           "mode": "automatic"
         },
         "provenance": "forge_source_archive",
-        "root_prefix": "blooesky-Domoticz-Gree-Ac-0a7c72a",
-        "sha256": "93ed19a409afaef907b5bd8044132238ebcde659da3f3916f63f9788a5ecdfc5",
-        "size": 5879,
+        "root_prefix": "blooesky-Domoticz-Gree-Ac-bbf4cb7",
+        "sha256": "3f3f55cebc7909bb35456010c02337d6eb85457a62b809f2217be13689a97693",
+        "size": 11053,
         "source_path": ".",
-        "tree_sha256": "58cab287ae7009f7331223d6e160d7305b1c50d92df2ac280cee78a73d06c0ff",
-        "url": "https://api.github.com/repos/blooesky/domoticz-gree-ac/zipball/0a7c72ae87371cbdb43e05c135da562eba716bd5"
+        "tree_sha256": "fb31153527973b6a39f2f92a9005a94aa241acaeab6964fa5894c076e57eed6b",
+        "url": "https://api.github.com/repos/blooesky/domoticz-gree-ac/zipball/bbf4cb78fd007bc7d45a64ce41c2d8cefdb5acf4"
       },
       "certified_identity": {
         "domoticz_key": "GreeAC",
-        "plugin_py_sha256": "b0d97333ad25e549b145b53e5427198dbad95198ddc2baf1320320831f58fbbd"
+        "plugin_py_sha256": "3dde9af4dedef40e221a9a59cb6f7bddd90a032216954aba1639da74a7afa3e9"
       },
-      "commit": "0a7c72ae87371cbdb43e05c135da562eba716bd5",
+      "commit": "bbf4cb78fd007bc7d45a64ce41c2d8cefdb5acf4",
       "package_id": "Domoticz-Gree-Ac",
       "provider": "github",
-      "release_id": "github:blooesky/domoticz-gree-ac:v1.0.0",
-      "released_at": "2026-09-08T07:01:54Z",
+      "release_id": "github:blooesky/domoticz-gree-ac:v1.0.8",
+      "released_at": "2026-10-05T14:17:26Z",
       "repository_identity": "github.com/blooesky/domoticz-gree-ac",
-      "revision": 1,
-      "supersedes": [],
-      "tag": "v1.0.0",
-      "version": "1.0.0"
+      "revision": 2,
+      "supersedes": [
+        "github:blooesky/domoticz-gree-ac:v1.0.0"
+      ],
+      "tag": "v1.0.8",
+      "version": "1.0.8"
     },
     {
       "artifact": {
@@ -407,31 +409,32 @@
           "mode": "automatic"
         },
         "provenance": "forge_source_archive",
-        "root_prefix": "janreimen-Domoticz-MySkodaAPI-1d07527",
-        "sha256": "29fb7e522423194fae980f7115913c44d8c1e9efbeadbd8c9cc9c4cf6135d923",
-        "size": 56986,
+        "root_prefix": "janreimen-Domoticz-MySkodaAPI-b327b82",
+        "sha256": "92949e95418006e1d5fa4ab04e6111112f835fa1c502cb292183195bd74ceb53",
+        "size": 75310,
         "source_path": ".",
-        "tree_sha256": "cfcd263fa169d9b64f413b8c00b06960532484db95e1faf7d963850aca9a0b10",
-        "url": "https://api.github.com/repos/janreimen/domoticz-myskodaapi/zipball/1d07527c667282b3896f4ab7dc56cc7e08c141e4"
+        "tree_sha256": "311c9313302eeb8b55662b1d2c88b34dd50a3ce940270ebd80251e9e28a0ff05",
+        "url": "https://api.github.com/repos/janreimen/domoticz-myskodaapi/zipball/b327b826a6b67b8e922fd272672f05502e3bba87"
       },
       "certified_identity": {
         "domoticz_key": "MySkodaAPI",
-        "plugin_py_sha256": "803ca47ed56d81f9be6fff076dceb49d4cd37ce7395d803a2f168a69a41ddb3c"
+        "plugin_py_sha256": "988db1b6fef8f7ead9abc0b578ed0285db7179c66c16fd500d76d6c15a461e24"
       },
-      "commit": "1d07527c667282b3896f4ab7dc56cc7e08c141e4",
+      "commit": "b327b826a6b67b8e922fd272672f05502e3bba87",
       "package_id": "Domoticz-MySkodaAPI",
       "provider": "github",
-      "release_id": "github:janreimen/domoticz-myskodaapi:v0.4.3.2",
-      "released_at": "2026-09-30T19:58:48Z",
+      "release_id": "github:janreimen/domoticz-myskodaapi:v0.4.4.1",
+      "released_at": "2026-10-06T19:16:40Z",
       "repository_identity": "github.com/janreimen/domoticz-myskodaapi",
-      "revision": 4,
+      "revision": 5,
       "supersedes": [
         "github:janreimen/domoticz-myskodaapi:v0.4.1",
         "github:janreimen/domoticz-myskodaapi:v0.4.2",
-        "github:janreimen/domoticz-myskodaapi:v0.4.3.1"
+        "github:janreimen/domoticz-myskodaapi:v0.4.3.1",
+        "github:janreimen/domoticz-myskodaapi:v0.4.3.2"
       ],
-      "tag": "v0.4.3.2",
-      "version": "0.4.3.2"
+      "tag": "v0.4.4.1",
+      "version": "0.4.4.1"
     },
     {
       "artifact": {
@@ -1841,30 +1844,31 @@
           "mode": "automatic"
         },
         "provenance": "forge_source_archive",
-        "root_prefix": "adrighem-ha-domoticz-sync-f339517",
-        "sha256": "d276b4eb3bde0bb36f6cf56b33aedd01f18de0ddf821c9f390af651c11c905ef",
-        "size": 2441852,
+        "root_prefix": "adrighem-ha-domoticz-sync-54ec0cd",
+        "sha256": "fdadee09b74fae1fc0a5ef3fea6136d4318d8193bb7d554b2bc48b42ddf949cb",
+        "size": 2461939,
         "source_path": ".",
-        "tree_sha256": "c957d679444ac606a51ab5aa16f68dddfaf8a349bbc4c823a2b37aa7a48352e2",
-        "url": "https://api.github.com/repos/adrighem/ha-domoticz-sync/zipball/f339517ce62ec9c64881925b0bb6513b016180da"
+        "tree_sha256": "0e301e677a267761ab3bac79c1f5fa7e3891bd841f2269569dfd89a7df9a6368",
+        "url": "https://api.github.com/repos/adrighem/ha-domoticz-sync/zipball/54ec0cdcb0fd33dfc3ebe545b6c8735811e2bcfc"
       },
       "certified_identity": {
         "domoticz_key": "HADomoticzSync",
-        "plugin_py_sha256": "34bc79dc4b63468e3b5921ce885577c9756b03cf8ab0a006376b85a3487959ed"
+        "plugin_py_sha256": "6093cb405903e08395c76f680330555952f696c3469ab3e10c44c8f7425818a8"
       },
-      "commit": "f339517ce62ec9c64881925b0bb6513b016180da",
+      "commit": "54ec0cdcb0fd33dfc3ebe545b6c8735811e2bcfc",
       "package_id": "ha-domoticz-sync",
       "provider": "github",
-      "release_id": "github:adrighem/ha-domoticz-sync:v0.8.0",
-      "released_at": "2026-09-26T14:32:21Z",
+      "release_id": "github:adrighem/ha-domoticz-sync:v0.8.1",
+      "released_at": "2026-10-07T11:32:46Z",
       "repository_identity": "github.com/adrighem/ha-domoticz-sync",
-      "revision": 3,
+      "revision": 4,
       "supersedes": [
         "github:adrighem/ha-domoticz-sync:v0.6.1",
-        "github:adrighem/ha-domoticz-sync:v0.6.2"
+        "github:adrighem/ha-domoticz-sync:v0.6.2",
+        "github:adrighem/ha-domoticz-sync:v0.8.0"
       ],
-      "tag": "v0.8.0",
-      "version": "0.8.0"
+      "tag": "v0.8.1",
+      "version": "0.8.1"
     },
     {
       "artifact": {
@@ -2078,7 +2082,7 @@
     }
   ],
   "schema_version": 2,
-  "sequence": 19,
+  "sequence": 20,
   "tombstones": [
     {
       "last_revision": 1,

@@ -1465,6 +1465,36 @@
       "source": "detected"
     },
     {
+      "branch": "main",
+      "confidence": "unknown",
+      "evidence_class": "legacy",
+      "identity": "github.com/szelessavalapitvany/domoticz-dsvt@main",
+      "last_detection": {
+        "confidence": "low",
+        "evidence_class": "generic_python",
+        "platforms": [
+          "linux",
+          "windows"
+        ],
+        "reasons": [
+          "README.md: uses Unix system paths",
+          "README.md: uses shell commands"
+        ],
+        "scores": {
+          "both": 0,
+          "linux": 6,
+          "windows": 0
+        }
+      },
+      "owner": "szelessavalapitvany",
+      "package_id": "Domoticz-DSVT",
+      "policy_action": "kept_low_confidence_new",
+      "registry_platforms": [],
+      "repository": "Domoticz-DSVT",
+      "reviewed": false,
+      "source": "unknown"
+    },
+    {
       "branch": "master",
       "confidence": "high",
       "evidence_class": "explicit_both",
@@ -4399,6 +4429,46 @@
         "windows"
       ],
       "repository": "Domoticz-Synology-Plugin",
+      "reviewed": false,
+      "source": "detected"
+    },
+    {
+      "branch": "master",
+      "confidence": "medium",
+      "evidence_class": "linux_evidence",
+      "identity": "github.com/janreimen/domoticz-synology-snmp@master",
+      "last_detection": {
+        "confidence": "medium",
+        "evidence_class": "linux_evidence",
+        "platforms": [
+          "linux"
+        ],
+        "reasons": [
+          "README.md: uses apt package installation",
+          "README.md: uses sudo",
+          "README.md: uses systemd",
+          "README.md: uses shell commands",
+          "plugin.py: uses apt package installation",
+          "plugin.py: uses sudo",
+          "synoSNMP/snmpcli.py: uses apt package installation",
+          "synoSNMP/snmpcli.py: uses sudo",
+          "tests/mibdata.py: uses Unix system paths",
+          "tools/capture_mib.sh: Linux-oriented file name",
+          "tools/capture_mib.sh: uses shell commands"
+        ],
+        "scores": {
+          "both": 0,
+          "linux": 33,
+          "windows": 0
+        }
+      },
+      "owner": "janreimen",
+      "package_id": "Domoticz-Synology-SNMP",
+      "policy_action": "unchanged",
+      "registry_platforms": [
+        "linux"
+      ],
+      "repository": "Domoticz-Synology-SNMP",
       "reviewed": false,
       "source": "detected"
     },
