@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.5](https://github.com/adrighem/PyPluginStore/compare/v2.30.4...v2.30.5) (2026-10-15)
+
+
+### Bug Fixes
+
+* **registry:** add Domoticz-DSVT, Domoticz-Synology-SNMP ([f5bb8c2](https://github.com/adrighem/PyPluginStore/commit/f5bb8c275ef37ab458b49c9ae4faf650bbe55f8e))
+* **registry:** correct domoticz_key for HomeWizard-Wifi-p1-plugin-Extended ([a22d578](https://github.com/adrighem/PyPluginStore/commit/a22d578c1956c912e2bb552c80306db60b7c589d))
+
 ## [2.30.4](https://github.com/adrighem/PyPluginStore/compare/v2.30.3...v2.30.4) (2026-10-06)
 
 
