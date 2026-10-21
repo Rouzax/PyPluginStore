@@ -1296,12 +1296,14 @@
     {
       "package_id": "Domoticz-OpenAQ-Plugin",
       "domoticz_key": "xfr_openaq4",
-      "description": "Get the air quality - API Version 3.0 compatible, thanks to :waltervl and :xofor for their previous developments.",
+      "description": "Get the air quality - reads the latest air-quality measurements for monitoring location from [OpenAQ](https://openaq.org) (API v3) and exposes them as native Domoticz devices",
       "repository": {
         "url": "https://github.com/janreimen/Domoticz-OpenAQ-Plugin",
         "branch": "master"
       },
-      "platforms": [],
+      "platforms": [
+        "linux"
+      ],
       "delivery": {
         "preferred": "release_if_indexed",
         "git_supported": true,
@@ -5251,6 +5253,30 @@
       "platforms": [
         "linux",
         "windows"
+      ],
+      "delivery": {
+        "preferred": "release_if_indexed",
+        "git_supported": true,
+        "release": {
+          "provider": "github",
+          "channel": "stable",
+          "tag_pattern": "^v?[0-9]+(?:\\.[0-9]+){1,3}$",
+          "artifact": "source_zip",
+          "source_path": ".",
+          "mutable_paths": []
+        }
+      }
+    },
+    {
+      "package_id": "domoticz-marstek-venus3.0E",
+      "domoticz_key": "MarstekVenus",
+      "description": "Domoticz Python Plugin and Standalone Scripts for Marstek Venus E 3.0 via Local UDP API",
+      "repository": {
+        "url": "https://github.com/belzig/domoticz-marstek-venus3.0E",
+        "branch": "main"
+      },
+      "platforms": [
+        "linux"
       ],
       "delivery": {
         "preferred": "release_if_indexed",

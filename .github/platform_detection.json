@@ -441,8 +441,8 @@
           "serial/serialwin32.py: uses Windows serial port names",
           "serial/serialposix.py: uses Unix system paths",
           "serial/serialposix.py: uses Linux device paths",
-          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/serialposix.py: imports Linux-specific module termios",
+          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/rfc2217.py: uses Unix system paths",
           "serial/rfc2217.py: uses Linux device paths"
         ],
@@ -2681,6 +2681,40 @@
     },
     {
       "branch": "main",
+      "confidence": "medium",
+      "evidence_class": "linux_evidence",
+      "identity": "github.com/belzig/domoticz-marstek-venus3.0e@main",
+      "last_detection": {
+        "confidence": "medium",
+        "evidence_class": "linux_evidence",
+        "platforms": [
+          "linux"
+        ],
+        "reasons": [
+          "README.md: mentions Raspberry Pi/Raspbian",
+          "README.md: uses chmod",
+          "README.md: uses shell commands",
+          "copy_venus_scripts.sh: Linux-oriented file name",
+          "copy_venus_scripts.sh: uses shell commands"
+        ],
+        "scores": {
+          "both": 0,
+          "linux": 13,
+          "windows": 0
+        }
+      },
+      "owner": "belzig",
+      "package_id": "domoticz-marstek-venus3.0E",
+      "policy_action": "unchanged",
+      "registry_platforms": [
+        "linux"
+      ],
+      "repository": "domoticz-marstek-venus3.0E",
+      "reviewed": false,
+      "source": "detected"
+    },
+    {
+      "branch": "main",
       "confidence": "low",
       "evidence_class": "generic_python",
       "identity": "github.com/galadril/domoticz-mcp-plugin@main",
@@ -2934,13 +2968,14 @@
           "README.md: mentions Linux and Windows support",
           "README.md: mentions Windows and Linux support",
           "README.md: uses shell commands",
+          "CONTRIBUTING.md: uses shell commands",
           "DEPLOY.md: uses sudo",
           "DEPLOY.md: uses systemd",
           "DEPLOY.md: uses shell commands"
         ],
         "scores": {
           "both": 16,
-          "linux": 10,
+          "linux": 12,
           "windows": 0
         }
       },
@@ -3151,32 +3186,37 @@
     },
     {
       "branch": "master",
-      "confidence": "unknown",
-      "evidence_class": "legacy",
+      "confidence": "medium",
+      "evidence_class": "linux_evidence",
       "identity": "github.com/janreimen/domoticz-openaq-plugin@master",
       "last_detection": {
-        "confidence": "low",
-        "evidence_class": "generic_python",
+        "confidence": "medium",
+        "evidence_class": "linux_evidence",
         "platforms": [
-          "linux",
-          "windows"
+          "linux"
         ],
         "reasons": [
-          "generic: no Linux-only or Windows-only evidence found"
+          "README.md: uses shell commands",
+          "CONTRIBUTING.md: uses shell commands",
+          "DEPLOY.md: uses sudo",
+          "DEPLOY.md: uses systemd",
+          "DEPLOY.md: uses shell commands"
         ],
         "scores": {
           "both": 0,
-          "linux": 0,
+          "linux": 12,
           "windows": 0
         }
       },
       "owner": "janreimen",
       "package_id": "Domoticz-OpenAQ-Plugin",
-      "policy_action": "kept_low_confidence_new",
-      "registry_platforms": [],
+      "policy_action": "unchanged",
+      "registry_platforms": [
+        "linux"
+      ],
       "repository": "Domoticz-OpenAQ-Plugin",
       "reviewed": false,
-      "source": "unknown"
+      "source": "detected"
     },
     {
       "branch": "main",
@@ -4444,17 +4484,17 @@
           "linux"
         ],
         "reasons": [
+          "README.md: mentions Raspberry Pi/Raspbian",
           "README.md: uses apt package installation",
           "README.md: uses sudo",
           "README.md: uses systemd",
           "README.md: uses shell commands",
           "plugin.py: uses apt package installation",
           "plugin.py: uses sudo",
+          "tests/test_deploy.py: uses shell commands",
           "synoSNMP/snmpcli.py: uses apt package installation",
           "synoSNMP/snmpcli.py: uses sudo",
-          "tests/mibdata.py: uses Unix system paths",
-          "tools/capture_mib.sh: Linux-oriented file name",
-          "tools/capture_mib.sh: uses shell commands"
+          "tests/mibdata.py: uses Unix system paths"
         ],
         "scores": {
           "both": 0,
@@ -5051,25 +5091,25 @@
       "evidence_class": "generic_python",
       "identity": "github.com/cth35/domoticz-wazetimetravel-plugin@main",
       "last_detection": {
-        "confidence": "low",
-        "evidence_class": "generic_python",
+        "confidence": "medium",
+        "evidence_class": "linux_evidence",
         "platforms": [
-          "linux",
-          "windows"
+          "linux"
         ],
         "reasons": [
+          "README.md: mentions Raspberry Pi/Raspbian",
           "README.md: uses sudo",
           "README.md: uses chmod"
         ],
         "scores": {
           "both": 0,
-          "linux": 5,
+          "linux": 8,
           "windows": 0
         }
       },
       "owner": "cth35",
       "package_id": "Domoticz-WazeTimeTravel-Plugin",
-      "policy_action": "unchanged",
+      "policy_action": "kept_existing_requires_high_confidence",
       "registry_platforms": [
         "linux",
         "windows"
@@ -7089,11 +7129,11 @@
           "windows"
         ],
         "reasons": [
-          "generic: no Linux-only or Windows-only evidence found"
+          "README.md: uses shell commands"
         ],
         "scores": {
           "both": 0,
-          "linux": 0,
+          "linux": 2,
           "windows": 0
         }
       },
@@ -7370,8 +7410,8 @@
           "serial/serialwin32.py: uses Windows serial port names",
           "serial/serialposix.py: uses Unix system paths",
           "serial/serialposix.py: uses Linux device paths",
-          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/serialposix.py: imports Linux-specific module termios",
+          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/rfc2217.py: uses Unix system paths",
           "serial/rfc2217.py: uses Linux device paths"
         ],
@@ -8574,8 +8614,8 @@
           "serial/serialwin32.py: uses Windows serial port names",
           "serial/serialposix.py: uses Unix system paths",
           "serial/serialposix.py: uses Linux device paths",
-          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/serialposix.py: imports Linux-specific module termios",
+          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/rfc2217.py: uses Unix system paths",
           "serial/rfc2217.py: uses Linux device paths"
         ],
@@ -9044,8 +9084,8 @@
           "serial/serialwin32.py: uses Windows serial port names",
           "serial/serialposix.py: uses Unix system paths",
           "serial/serialposix.py: uses Linux device paths",
-          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/serialposix.py: imports Linux-specific module termios",
+          "serial/serialposix.py: imports Linux-specific module fcntl",
           "serial/rfc2217.py: uses Unix system paths",
           "serial/rfc2217.py: uses Linux device paths"
         ],
