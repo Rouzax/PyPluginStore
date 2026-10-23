@@ -713,3 +713,14 @@ Verification:
 
 Public action:
 - Commented on and closed `PR:32`.
+
+## 2026-10-23 - Bump release_index sequence on master registry changes
+
+Decision: `generate` job raises `sequence` when `registry_sha256` changes vs `github.event.before`; PR `verify` stays hash-only.
+
+Rationale:
+- Clients reject pairs with `sequence <= watermark` and silently retain the old pair, hiding mid-week registry additions until the weekly scan.
+- Keeping the bump on master avoids contributor PR conflicts on `sequence`.
+
+Public action:
+- Opened `PR:194`.

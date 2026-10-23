@@ -955,3 +955,13 @@ Notes:
 - Push workflows for `66bcd4c` completed successfully: Generate Plugin XML Header, CodeQL, and Validate Plugins.
 - Release Please opened `PR:34` for `2.8.1`.
 - Post-merge workflows for `PR:34` completed successfully: Generate Plugin XML Header, release-please, CodeQL, and Validate Plugins.
+
+## 2026-10-23 - Triage: PR:193, PR:192, ISSUE:190
+
+- `PR:193` (Rouzax, Home Connect `homeconnectex`) reviewed: registry-only diff, sha256 binding verified, `dist` plugin key verified, not duplicate of `home-connect`, CI green. Approved by maintainer; merge blocked by agent permission, pending manual merge.
+- `PR:192` release 2.30.6: merge after `PR:193`.
+- Found release_index `sequence` not raised on registry merges; opened `PR:194`.
+- Commented on `ISSUE:190` (plain-language status labels); language review planned.
+
+Verification:
+- `pytest`: 1639 passed.
