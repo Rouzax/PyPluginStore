@@ -43,23 +43,7 @@ jobs:
         run: python .github/scripts/generate_plugin.py
 
       - name: Update release_index.json registry SHA-256 binding
-        run: |
-          python -c '
-          import os, json, hashlib
-          reg_path = "registry.json"
-          idx_path = "release_index.json"
-          if os.path.isfile(reg_path) and os.path.isfile(idx_path):
-              with open(reg_path, "rb") as f:
-                  sha = hashlib.sha256(f.read()).hexdigest()
-              with open(idx_path, "r", encoding="utf-8") as f:
-                  index = json.load(f)
-              if index.get("registry_sha256") != sha:
-                  index["registry_sha256"] = sha
-                  with open(idx_path, "w", encoding="utf-8", newline="\n") as f:
-                      json.dump(index, f, indent=2)
-                      f.write("\n")
-                  print(f"Updated release_index.json with SHA: {sha}")
-          '
+        run: python .github/scripts/bind_release_index.py
 
       - name: Verify files are current
         run: git diff --exit-code -- plugin.py release_index.json
@@ -81,24 +65,23 @@ jobs:
       - name: Generate plugin.py
         run: python .github/scripts/generate_plugin.py
 
-      - name: Update release_index.json registry SHA-256 binding
+      - name: Fetch previously published release_index.json
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
         run: |
-          python -c '
-          import os, json, hashlib
-          reg_path = "registry.json"
-          idx_path = "release_index.json"
-          if os.path.isfile(reg_path) and os.path.isfile(idx_path):
-              with open(reg_path, "rb") as f:
-                  sha = hashlib.sha256(f.read()).hexdigest()
-              with open(idx_path, "r", encoding="utf-8") as f:
-                  index = json.load(f)
-              if index.get("registry_sha256") != sha:
-                  index["registry_sha256"] = sha
-                  with open(idx_path, "w", encoding="utf-8", newline="\n") as f:
-                      json.dump(index, f, indent=2)
-                      f.write("\n")
-                  print(f"Updated release_index.json with SHA: {sha}")
-          '
+          if [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
+            git fetch --no-tags --depth=1 origin "$BEFORE_SHA"
+            git show "$BEFORE_SHA:release_index.json" > "$RUNNER_TEMP/previous_release_index.json"
+          fi
+
+      - name: Update release_index.json registry SHA-256 binding and sequence
+        run: |
+          previous="$RUNNER_TEMP/previous_release_index.json"
+          if [ -f "$previous" ]; then
+            python .github/scripts/bind_release_index.py --previous "$previous"
+          else
+            python .github/scripts/bind_release_index.py
+          fi
 
       - name: Commit and push changes
         run: |
