@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.30.6](https://github.com/adrighem/PyPluginStore/compare/v2.30.5...v2.30.6) (2026-10-23)
+
+
+### Bug Fixes
+
+* **ci:** raise release_index sequence when registry binding changes ([9c3ea9a](https://github.com/adrighem/PyPluginStore/commit/9c3ea9a2ce2925a83eb367596277a127e548a46d))
+* **ci:** raise release_index sequence when registry binding changes ([c0090b2](https://github.com/adrighem/PyPluginStore/commit/c0090b264148fb3db15a64ca08eded9a31ecd741))
+* **registry:** add domoticz-marstek-venus3.0E; update Domoticz-OpenAQ-Plugin ([ffccdb8](https://github.com/adrighem/PyPluginStore/commit/ffccdb8d8e77a93f0c1bbea6d892340ffaa120c3))
+* **registry:** add Home Connect (homeconnectex) ([34e1c96](https://github.com/adrighem/PyPluginStore/commit/34e1c9688d83b4eb9b62e9debef12a1fec033603))
+* **registry:** add Home Connect (homeconnectex) ([c8d4229](https://github.com/adrighem/PyPluginStore/commit/c8d4229e208c39c738b9d2491c007885001e968d))
+* **registry:** add Home Connect (homeconnectex) ([65df843](https://github.com/adrighem/PyPluginStore/commit/65df843e368cab899264e3010010620380653b4b))
+
 ## [2.30.5](https://github.com/adrighem/PyPluginStore/compare/v2.30.4...v2.30.5) (2026-10-15)
 
 
