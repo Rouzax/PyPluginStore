@@ -56,3 +56,10 @@
 - Forge-generated archives need an explicit public `User-Agent`, canonical timestamp normalization, and separate transport/tree hashes; commit-addressed contents can remain equivalent even when regenerated compression bytes change.
 - Release artifacts never silently fall back to a branch update after verification failure. Automatic Git-to-release migration requires source provenance, safe ancestry, a clean checkout, and no unknown local files.
 - Sequence and expiry in an unsigned update index are operational staleness guards, not cryptographic rollback/freeze protection; document the trust boundary and reserve signed metadata for that claim.
+
+## External PRs and release-please (2026-10-23)
+
+- External PRs with non-conventional titles must be squash-merged with a `fix(registry): ...` subject; merge commits are skipped by release-please.
+- `BEGIN_COMMIT_OVERRIDE` in a merged PR body applies to every commit in that PR, including the merge commit, producing duplicate bullets.
+- Merge commits of conventional-title PRs also duplicate bullets (merge commit body repeats title).
+- `include-commit-authors: true` did not render author credit in 2.30.6; credit added manually. Investigate.

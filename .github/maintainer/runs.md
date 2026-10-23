@@ -965,3 +965,11 @@ Notes:
 
 Verification:
 - `pytest`: 1639 passed.
+- Follow-up: merged `PR:194`, `PR:193`, `PR:192`; `v2.30.6` published.
+- `PR:194` first live run: bot commit `d34d31e` raised `release_index.json` sequence 21 -> 22.
+- `PR:193` merged as merge commit (non-conventional title) so release-please skipped it; commit overrides produced per-commit duplicates; deduped `CHANGELOG.md` and PR:192 body by hand before merge.
+
+Open items:
+1. `ISSUE:190`: plain-language review of user-facing status text. Start with `pypluginstore.html` `formatCardManagementStatus` (`Git - update available`, `Git - new commits available`, git `current`) and `plugin_core.py` migration/preservation messages ("Release migration needs confirmation", "preservation policy contains an unsafe path"). Proposed: `Update available`, `Up to date`, action-oriented explanations with technical detail in a tooltip. Ping arjantenhoopen to review wording.
+2. Author credit: `include-commit-authors: true` in `release-please-config.json` rendered no authors in 2.30.6. Check release-please action version support and whether it only applies to some commit/author types.
+3. Merge hygiene: enforce squash-only with PR title as commit subject (repo setting `squash_merge_commit_title=PR_TITLE`), optionally add a conventional PR title check, so external PRs land in the changelog without manual cleanup.
