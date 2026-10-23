@@ -6491,6 +6491,31 @@
       }
     },
     {
+      "package_id": "homeconnectex",
+      "domoticz_key": "homeconnectex",
+      "description": "Domoticz plugin for Home Connect appliances (Bosch, Siemens, Neff, Gaggenau): live state, programs and remaining time from the event stream, washer energy and water meters, with opt-in control.",
+      "repository": {
+        "url": "https://github.com/Rouzax/home-connect-domoticz-plugin",
+        "branch": "dist"
+      },
+      "platforms": [
+        "linux"
+      ],
+      "delivery": {
+        "preferred": "release_if_indexed",
+        "git_supported": true,
+        "release": {
+          "provider": "github",
+          "channel": "stable",
+          "tag_pattern": "^v?[0-9]+(?:\\.[0-9]+){1,3}$",
+          "artifact": "source_zip",
+          "source_path": ".",
+          "mutable_paths": []
+        }
+      },
+      "requires_python": ">=3.11"
+    },
+    {
       "package_id": "hoog-domoticz-shelly-plugin",
       "domoticz_key": "Shelly",
       "description": "Domoticz plugin for integrating Shelly Gen2+ devices with Switch, PM1 or EM1 components.",
