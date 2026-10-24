@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.31.0](https://github.com/adrighem/PyPluginStore/compare/v2.30.6...v2.31.0) (2026-10-24)
+
+
+### Features
+
+* **ux:** user-friendly status strings and multi-language translations (refs [#190](https://github.com/adrighem/PyPluginStore/issues/190)) ([09c886d](https://github.com/adrighem/PyPluginStore/commit/09c886df5bfe718c95a531b63bb0aeed73b60357))
+
 ## [2.30.6](https://github.com/adrighem/PyPluginStore/compare/v2.30.5...v2.30.6) (2026-10-23)
 
 
