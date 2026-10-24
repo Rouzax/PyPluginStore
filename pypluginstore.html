@@ -3995,6 +3995,133 @@
         statusBadges.appendChild(badge);
     }
 
+    const I18N_DICT = {
+        en: {
+            update_available: 'Update available',
+            dev_update_available: 'Development update available',
+            stable_update_available: 'Stable update available',
+            update_requires_confirmation: 'Update requires confirmation',
+            up_to_date: 'Up to date',
+            update_status_unknown: 'Update status unknown',
+            restart_required: 'Restart required',
+            btn_update: 'Update',
+            btn_switch_stable: 'Switch to Stable',
+            btn_revert: 'Revert'
+        },
+        nl: {
+            update_available: 'Update beschikbaar',
+            dev_update_available: 'Ontwikkelingsupdate beschikbaar',
+            stable_update_available: 'Stabiele update beschikbaar',
+            update_requires_confirmation: 'Update vereist bevestiging',
+            up_to_date: 'Up-to-date',
+            update_status_unknown: 'Updatestatus onbekend',
+            restart_required: 'Herstart vereist',
+            btn_update: 'Bijwerken',
+            btn_switch_stable: 'Overschakelen naar stabiel',
+            btn_revert: 'Herstellen'
+        },
+        de: {
+            update_available: 'Update verfügbar',
+            dev_update_available: 'Entwicklungs-Update verfügbar',
+            stable_update_available: 'Stabiles Update verfügbar',
+            update_requires_confirmation: 'Update erfordert Bestätigung',
+            up_to_date: 'Aktuell',
+            update_status_unknown: 'Update-Status unbekannt',
+            restart_required: 'Neustart erforderlich',
+            btn_update: 'Aktualisieren',
+            btn_switch_stable: 'Zu stabil wechseln',
+            btn_revert: 'Wiederherstellen'
+        },
+        fr: {
+            update_available: 'Mise à jour disponible',
+            dev_update_available: 'Mise à jour de développement disponible',
+            stable_update_available: 'Mise à jour stable disponible',
+            update_requires_confirmation: 'Mise à jour nécessite confirmation',
+            up_to_date: 'À jour',
+            update_status_unknown: 'Statut de mise à jour inconnu',
+            restart_required: 'Redémarrage requis',
+            btn_update: 'Mettre à jour',
+            btn_switch_stable: 'Passer à la version stable',
+            btn_revert: 'Restaurer'
+        },
+        es: {
+            update_available: 'Actualización disponible',
+            dev_update_available: 'Actualización de desarrollo disponible',
+            stable_update_available: 'Actualización estable disponible',
+            update_requires_confirmation: 'La actualización requiere confirmación',
+            up_to_date: 'Actualizado',
+            update_status_unknown: 'Estado de actualización desconocido',
+            restart_required: 'Reinicio requerido',
+            btn_update: 'Actualizar',
+            btn_switch_stable: 'Cambiar a estable',
+            btn_revert: 'Revertir'
+        },
+        it: {
+            update_available: 'Aggiornamento disponibile',
+            dev_update_available: 'Aggiornamento di sviluppo disponible',
+            stable_update_available: 'Aggiornamento stabile disponibile',
+            update_requires_confirmation: 'Aggiornamento richiede conferma',
+            up_to_date: 'Aggiornato',
+            update_status_unknown: 'Stato aggiornamento sconosciuto',
+            restart_required: 'Riavvio richiesto',
+            btn_update: 'Aggiorna',
+            btn_switch_stable: 'Passa a stabile',
+            btn_revert: 'Ripristina'
+        },
+        pl: {
+            update_available: 'Dostępna aktualizacja',
+            dev_update_available: 'Dostępna aktualizacja rozwojowa',
+            stable_update_available: 'Dostępna stabilna aktualizacja',
+            update_requires_confirmation: 'Aktualizacja wymaga potwierdzenia',
+            up_to_date: 'Aktualny',
+            update_status_unknown: 'Status aktualizacji nieznany',
+            restart_required: 'Wymagany restart',
+            btn_update: 'Aktualizuj',
+            btn_switch_stable: 'Przełącz na stabilną',
+            btn_revert: 'Przywróć'
+        },
+        sv: {
+            update_available: 'Uppdatering tillgänglig',
+            dev_update_available: 'Utvecklingsuppdatering tillgänglig',
+            stable_update_available: 'Stabil uppdatering tillgänglig',
+            update_requires_confirmation: 'Uppdatering kräver bekräftelse',
+            up_to_date: 'Uppdaterad',
+            update_status_unknown: 'Uppdateringsstatus okänd',
+            restart_required: 'Omstart krävs',
+            btn_update: 'Uppdatera',
+            btn_switch_stable: 'Växla till stabil',
+            btn_revert: 'Återställ'
+        },
+        no: {
+            update_available: 'Oppdatering tilgjengelig',
+            dev_update_available: 'Utviklingsoppdatering tilgjengelig',
+            stable_update_available: 'Stabil oppdatering tilgjengelig',
+            update_requires_confirmation: 'Oppdatering krever bekreftelse',
+            up_to_date: 'Oppdatert',
+            update_status_unknown: 'Oppdateringsstatus ukjent',
+            restart_required: 'Omstart nødvendig',
+            btn_update: 'Oppdater',
+            btn_switch_stable: 'Bytt til stabil',
+            btn_revert: 'Gjenopprett'
+        }
+    };
+
+    function getActiveLanguage() {
+        if (typeof window === 'undefined') return 'en';
+        const lang = (window.Domoticz && window.Domoticz.Language)
+            || window.language
+            || (typeof $ === 'function' && typeof $.i18n === 'function' && typeof $.i18n().locale === 'string' && $.i18n().locale)
+            || (typeof navigator !== 'undefined' && navigator.language ? navigator.language.slice(0, 2).toLowerCase() : 'en');
+        const code = String(lang || 'en').slice(0, 2).toLowerCase();
+        return I18N_DICT[code] ? code : 'en';
+    }
+
+    function i18n(key, fallback) {
+        const lang = getActiveLanguage();
+        const dict = I18N_DICT[lang] || I18N_DICT.en;
+        return (dict && dict[key]) || fallback || key;
+    }
+
     function releaseChannelLabel(state) {
         if (!state || state.channel === undefined) return '';
         if (state.channel === 'release') return 'Release';
@@ -4062,17 +4189,16 @@
             }
         } else if (state.status === 'migration_available') {
             const releaseTarget = target ? ' ' + target : '';
-            details.push('Use Release channel' + releaseTarget +
-                ' instead of Git commits');
+            details.push(i18n('stable_update_available', 'Stable update available') + releaseTarget);
         } else if (state.status === 'available') {
-            details.push((channel || 'Update') + ' available');
+            details.push(i18n('update_available', 'Update available'));
         } else if (state.status === 'current') {
-            details.push((target ? target + ' — ' : '') + 'current');
+            details.push((target ? target + ' - ' : '') + i18n('up_to_date', 'Up to date'));
         } else if (state.status) {
             details.push(String(state.status).replace(/_/g, ' '));
         }
 
-        if (state.restart_pending) details.push('Restart required');
+        if (state.restart_pending) details.push(i18n('restart_required', 'Restart required'));
         const channelPrefix = state.status === 'available' ? '' : channel;
         return [channelPrefix, ...details].filter(Boolean).join(' · ');
     }
@@ -4083,9 +4209,9 @@
         }
         if (isManager && updateStatus === 'available') {
             if (verInfo && verInfo.installed && verInfo.available && verInfo.installed === verInfo.available) {
-                return 'Git - new commits available';
+                return i18n('dev_update_available', 'Development update available');
             }
-            return 'Git - update available';
+            return i18n('update_available', 'Update available');
         }
         return '';
     }
@@ -4507,9 +4633,9 @@
                     useReleaseButton.textContent = releaseManagementActionLabel(
                         management,
                         'use_release',
-                        'Use Release channel'
+                        i18n('btn_switch_stable', 'Switch to Stable')
                     );
-                    useReleaseButton.title = 'Use the Release channel instead of Git commits';
+                    useReleaseButton.title = 'Switch to official stable release';
                     if (installedScanError || installationConflict) {
                         useReleaseButton.disabled = true;
                         useReleaseButton.title = installedScanError
@@ -4528,7 +4654,7 @@
                     rollbackButton.textContent = releaseManagementActionLabel(
                         management,
                         'rollback',
-                        'Rollback'
+                        i18n('btn_revert', 'Revert')
                     );
                     if (installedScanError || installationConflict) {
                         rollbackButton.disabled = true;

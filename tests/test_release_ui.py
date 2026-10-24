@@ -71,6 +71,12 @@ def extract_js_function(script, function_name):
     raise AssertionError(function_name + " was not closed")
 
 
+def extract_i18n_support(script):
+    start = script.index("const I18N_DICT =")
+    end = script.index("function releaseChannelLabel")
+    return script[start:end]
+
+
 def run_node(source):
     node = shutil.which("node")
     if not node:
@@ -772,13 +778,16 @@ if (releaseChannelLabel({}) !== '') {
 
 def test_release_status_text_surfaces_versions_migration_and_restart():
     script = load_inline_script()
-    function_source = extract_js_function(
-        script, "formatReleaseManagementStatus"
+    function_source = "\n".join(
+        [
+            extract_i18n_support(script),
+            extract_js_function(script, "formatReleaseManagementStatus"),
+        ]
     )
     cases = [
         {
             "state": release_management_state(),
-            "fragments": ["Release available"],
+            "fragments": ["Update available"],
         },
         {
             "state": release_management_state(
@@ -788,7 +797,7 @@ def test_release_status_text_surfaces_versions_migration_and_restart():
                 ),
             ),
             "fragments": [
-                "Release available",
+                "Update available",
             ],
         },
         {
@@ -837,7 +846,7 @@ def test_release_status_text_surfaces_versions_migration_and_restart():
                 migration_action_state="available",
             ),
             "fragments": [
-                "Use Release channel v2.0.0 instead of Git commits",
+                "Stable update available v2.0.0",
             ],
         },
         {
@@ -852,18 +861,18 @@ def test_release_status_text_surfaces_versions_migration_and_restart():
         {
             "state": release_management_state(
                 status="index_behind",
-                summary="Release - index behind",
+                summary="Index behind",
                 updateable=False,
             ),
-            "fragments": ["Release - index behind"],
+            "fragments": ["Index behind"],
         },
         {
             "state": release_management_state(
                 status="provider_status_unknown",
-                summary="Release - provider status unknown",
+                summary="Provider status unknown",
                 updateable=False,
             ),
-            "fragments": ["Release - provider status unknown"],
+            "fragments": ["Provider status unknown"],
         },
         {
             "state": release_management_state(
@@ -925,6 +934,7 @@ def test_card_update_status_aligns_manager_and_release_copy():
     script = load_inline_script()
     function_source = "\n".join(
         [
+            extract_i18n_support(script),
             extract_js_function(script, "formatReleaseManagementStatus"),
             extract_js_function(script, "formatCardManagementStatus"),
         ]
@@ -933,7 +943,7 @@ def test_card_update_status_aligns_manager_and_release_copy():
         function_source
         + """
 const manager = formatCardManagementStatus(null, true, 'available');
-if (manager !== 'Git - update available') {
+if (manager !== 'Update available') {
     throw new Error(`manager update rendered as "${manager}"`);
 }
 const release = formatCardManagementStatus({
@@ -941,7 +951,7 @@ const release = formatCardManagementStatus({
     status: 'available',
     available_version: '2.8.5'
 }, false, 'available');
-if (release !== 'Release available') {
+if (release !== 'Update available') {
     throw new Error(`Release update rendered as "${release}"`);
 }
 const currentManager = formatCardManagementStatus(null, true, 'current');
@@ -961,8 +971,11 @@ if (currentManager !== '') {
 
 def test_git_status_text_is_hidden_unless_an_update_is_available():
     script = load_inline_script()
-    function_source = extract_js_function(
-        script, "formatReleaseManagementStatus"
+    function_source = "\n".join(
+        [
+            extract_i18n_support(script),
+            extract_js_function(script, "formatReleaseManagementStatus"),
+        ]
     )
     run_node(
         function_source
@@ -983,10 +996,10 @@ if (available !== 'Git · Update available') {
 const expectedFallback = formatReleaseManagementStatus({
     channel: 'git',
     status: 'git_unknown',
-    summary: 'Git - update status unknown',
+    summary: 'Update status unknown',
     verification_message: 'release_entry_missing'
 });
-if (expectedFallback !== 'Git - update status unknown' ||
+if (expectedFallback !== 'Update status unknown' ||
     expectedFallback.includes('release_entry_missing')) {
     throw new Error(`Git fallback leaked internal state as "${expectedFallback}"`);
 }
@@ -1304,8 +1317,8 @@ def test_ui_renders_explicit_channel_and_rollback_actions():
     assert "use_git" not in script
     assert "Use Git" not in script
     assert "use_release" in script
-    assert "Use Release channel" in script
-    assert "Use the Release channel instead of Git commits" in script
+    assert "Switch to Stable" in script
+    assert "Switch to official stable release" in script
     assert "rollback" in script
     assert "releaseManagementActionLabel" in script
     assert "rollbackButton.textContent = releaseManagementActionLabel" in script

@@ -528,7 +528,7 @@ def test_expected_git_fallback_does_not_expose_missing_release_reason(
         is_manager=False,
     )
 
-    assert presented["summary"] == "Git - update status unknown"
+    assert presented["summary"] == "Update status unknown"
     assert "release_entry_missing" not in presented["summary"]
     assert presented["verification_message"] == "release_entry_missing"
     assert presented["actions"] == [
@@ -552,22 +552,22 @@ def test_expected_git_fallback_does_not_expose_missing_release_reason(
         (
             "git",
             "",
-            "Restore Git",
-            "Return to previous Git version",
+            "Revert",
+            "Revert to previous version",
         ),
         (
             "release",
             "1.3.0",
-            "Restore v1.3.0",
-            "Restore v1.3.0",
+            "Revert to v1.3.0",
+            "Revert to v1.3.0",
         ),
         (
             "release",
             "",
-            "Rollback",
-            "Restore previous Release version",
+            "Revert",
+            "Revert to previous version",
         ),
-        ("", "", "Rollback", "Restore previous version"),
+        ("", "", "Revert", "Revert to previous version"),
     ],
 )
 def test_management_presentation_names_verified_restore_target(
@@ -1650,7 +1650,7 @@ def test_release_install_uses_provider_live_candidate_after_explicit_refresh(
     assert management["verification_message"] == (
         "Verified directly from the release provider."
     )
-    assert management["summary"] == "Release available"
+    assert management["summary"] == "Update available"
     assert [
         action["id"]
         for action in management["actions"]
@@ -1762,7 +1762,7 @@ def test_provider_current_observation_hides_stale_index_target(
     )[entry.key]
 
     assert index_behind["status"] == "index_behind"
-    assert index_behind["summary"] == "Release - index behind"
+    assert index_behind["summary"] == "Index behind"
     assert index_behind["available_version"] == provider_release.version
     assert index_behind["available_revision"] == provider_release.revision
     assert index_behind["verification_status"] == "verified_on_host"
@@ -1799,7 +1799,7 @@ def test_provider_current_observation_hides_stale_index_target(
     )
 
     assert management["status"] == "current"
-    assert management["summary"] == "Release - current"
+    assert management["summary"] == "Up to date"
     assert management["available_version"] == provider_release.version
     assert management["available_revision"] == provider_release.revision
     assert management["verification_status"] == "verified_on_host"
@@ -1925,7 +1925,7 @@ def test_legacy_provider_metadata_reports_unknown_instead_of_downgrade(
     )[entry.key]
 
     assert management["status"] == "provider_status_unknown"
-    assert management["summary"] == "Release - provider status unknown"
+    assert management["summary"] == "Provider status unknown"
     assert management["available_version"] == "2.0.0"
     assert management["available_revision"] == 2
     assert management["updateable"] is False
@@ -2223,7 +2223,7 @@ def test_local_override_on_release_install_requires_git_checkout(
         action
         for action in management["actions"]
         if action["id"] == "rollback"
-    )["label"] == "Restore v1.3.0"
+    )["label"] == "Revert to v1.3.0"
     assert update_calls == []
     assert responses[0]["status"] == "error"
     assert responses[0]["action"] == "update"

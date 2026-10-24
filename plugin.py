@@ -20641,30 +20641,22 @@ class BasePlugin:
     @staticmethod
     def _rollback_action_label(state):
         """Return compact button copy for the verified restore target."""
-        channel = str(state.get("rollback_channel") or "")
         version = str(state.get("rollback_version") or "").strip()
-        if channel == "git":
-            return "Restore Git"
         if version:
             normalized_version = version.lstrip("vV")
             if normalized_version:
-                return "Restore v" + normalized_version
-        return "Rollback"
+                return "Revert to v" + normalized_version
+        return "Revert"
 
     @staticmethod
     def _rollback_confirmation_message(state, plugin_key):
         """Describe the restore target fully before executing the action."""
-        channel = str(state.get("rollback_channel") or "")
         version = str(state.get("rollback_version") or "").strip()
         normalized_version = version.lstrip("vV")
-        if channel == "git":
-            action = "Return to previous Git version"
-        elif normalized_version:
-            action = "Restore v" + normalized_version
-        elif channel == "release":
-            action = "Restore previous Release version"
+        if normalized_version:
+            action = "Revert to v" + normalized_version
         else:
-            action = "Restore previous version"
+            action = "Revert to previous version"
         return (
             action
             + " for "
@@ -20692,30 +20684,30 @@ class BasePlugin:
             or ""
         )
         if state.get("restart_pending"):
-            summary = channel + " - restart required"
+            summary = "Restart required"
         elif status == "available":
-            summary = "Release available"
+            summary = "Update available"
         elif status == "git_available":
             installed_v = state.get("installed_version")
             available_v = state.get("available_version")
             if installed_v and available_v and installed_v == available_v:
-                summary = "Git - new commits available"
+                summary = "Development update available"
             else:
-                summary = "Git - update available"
+                summary = "Update available"
         elif status == "migration_available":
-            summary = "Git - Release migration available"
+            summary = "Stable update available"
         elif status == "migration_confirmation_required":
-            summary = "Git - Release migration needs confirmation"
+            summary = "Update requires confirmation"
         elif status == "current" or status == "git_current":
-            summary = channel + " - current"
+            summary = "Up to date"
         elif status == "index_behind":
-            summary = "Release - index behind"
+            summary = "Index behind"
         elif status == "provider_status_unknown":
-            summary = "Release - provider status unknown"
+            summary = "Provider status unknown"
         elif status == "git_unknown":
-            summary = "Git - update status unknown"
+            summary = "Update status unknown"
         else:
-            summary = channel + " - " + str(status).replace("_", " ")
+            summary = str(status).replace("_", " ").capitalize()
         expected_git_fallback = (
             state["channel"] == "git"
             and reason == "release_entry_missing"
@@ -20782,7 +20774,7 @@ class BasePlugin:
             ):
                 action(
                     "use_release",
-                    "Use Release channel",
+                    "Switch to Stable",
                     True,
                 )
         state["summary"] = summary
