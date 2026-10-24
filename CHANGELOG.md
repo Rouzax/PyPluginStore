@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.31.1](https://github.com/adrighem/PyPluginStore/compare/v2.31.0...v2.31.1) (2026-10-24)
+
+
+### Bug Fixes
+
+* **i18n:** update Dutch up-to-date translation to Bijgewerkt (refs [#190](https://github.com/adrighem/PyPluginStore/issues/190)) ([6331445](https://github.com/adrighem/PyPluginStore/commit/63314452422f4d061e506a308f1344573d6bd4b1))
+
 ## [2.31.0](https://github.com/adrighem/PyPluginStore/compare/v2.30.6...v2.31.0) (2026-10-24)
 
 
