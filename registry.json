@@ -6658,7 +6658,7 @@
           "mutable_paths": []
         }
       },
-      "requires_python": ">=3.9"
+      "requires_python": ">=3.11"
     },
     {
       "package_id": "pzem016",
