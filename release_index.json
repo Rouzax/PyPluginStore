@@ -2117,7 +2117,7 @@
     }
   ],
   "schema_version": 2,
-  "sequence": 22,
+  "sequence": 23,
   "tombstones": [
     {
       "last_revision": 1,
