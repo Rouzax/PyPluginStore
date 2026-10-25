@@ -1,7 +1,7 @@
 {
   "expires_at": "2026-11-10T16:29:12Z",
   "generated_at": "2026-10-25T16:29:12Z",
-  "registry_sha256": "4b7073af06c16ddd4c8821976863a7751c2def9d61e83d388078e8750dbf910a",
+  "registry_sha256": "687227e76fd4455415afa80b825f4723997a15b91913854381efdce86a2d00ec",
   "releases": [
     {
       "artifact": {
@@ -2188,7 +2188,7 @@
     }
   ],
   "schema_version": 2,
-  "sequence": 24,
+  "sequence": 25,
   "tombstones": [
     {
       "last_revision": 1,
