@@ -6664,7 +6664,7 @@
       "description": "Domoticz plugin for myenergi (zappi + harvi): real solar, EV, home, grid, and per-inverter energy counters, plus opt-in charger control.",
       "repository": {
         "url": "https://github.com/Rouzax/myenergi-domoticz-plugin",
-        "branch": "main"
+        "branch": "dist"
       },
       "platforms": [
         "linux",
